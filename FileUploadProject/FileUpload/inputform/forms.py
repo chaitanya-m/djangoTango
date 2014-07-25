@@ -3,7 +3,8 @@ from inputform.models import UserName, UserEmail
 
 class UserNameForm(forms.ModelForm):
 	name = forms.CharField(max_length=128, help_text="Please enter your name.")
-	
+	email = forms.CharField(max_length=128, help_text="Please enter your email.")
+
 	class Meta:
 		model = UserName
 
