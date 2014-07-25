@@ -1,3 +1,5 @@
 from django.contrib import admin
+from rango.models import UserName, UserEmail
 
-# Register your models here.
+admin.site.register(UserName)
+admin.site.register(UserEmail)
