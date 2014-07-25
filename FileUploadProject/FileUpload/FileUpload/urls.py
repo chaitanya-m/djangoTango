@@ -9,5 +9,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^app1/', include('app1.urls'))
+    url(r'^app1/', include('app1.urls')),
+    url(r'^rango/', include('rango.urls')), # ADD THIS NEW TUPLE!
 )
