@@ -6,6 +6,13 @@ class UserName(models.Model):
 	picfile = models.FileField(upload_to='documents/%Y/%m/%d')
 	def __unicode__(self):
 		return self.name
+	def file_link(self):
+		if self.picfile:
+			return "<a href='%s'>download</a>" % (self.picfile.url,)
+		else:
+			return "No attachment"
+
+	file_link.allow_tags = True
 
 class UserEmail(models.Model):
 	user_name = models.OneToOneField(UserName)
