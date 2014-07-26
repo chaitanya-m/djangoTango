@@ -20,7 +20,7 @@ def add_username(request):
             # Save the new category to the database.
             pic = UserName(picfile = request.FILES['picfile'])
             pic.save()
-            #form.save(commit=True)
+            form.save(commit=True)
             return index(request)         
             # Now call the index() view.
             # The user will be shown the homepage.
