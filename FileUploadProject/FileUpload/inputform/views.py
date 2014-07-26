@@ -2,6 +2,8 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from inputform.models import UserName
 from inputform.forms import UserNameForm
 
 def index(request):
@@ -12,13 +14,14 @@ def add_username(request):
     context = RequestContext(request)
     # A HTTP POST?
     if request.method == 'POST':
-        form = UserNameForm(request.POST)
+        form = UserNameForm(request.POST, request.FILES)
 
         if form.is_valid():
             # Save the new category to the database.
-            form.save(commit=True)
-            return index(request)
-
+            pic = UserName(picfile = request.FILES['picfile'])
+            pic.save()
+            #form.save(commit=True)
+            return index(request)         
             # Now call the index() view.
             # The user will be shown the homepage.
         else:

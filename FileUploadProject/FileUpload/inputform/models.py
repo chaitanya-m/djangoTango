@@ -3,7 +3,7 @@ from django.db import models
 class UserName(models.Model):
 	name = models.CharField(max_length=128, unique=False)
 	email = models.CharField(max_length=128, unique=False)
-
+	picfile = models.FileField(upload_to='documents/%Y/%m/%d')
 	def __unicode__(self):
 		return self.name
 

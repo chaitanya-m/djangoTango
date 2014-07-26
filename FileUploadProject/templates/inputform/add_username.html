@@ -7,7 +7,7 @@
     <body>
         <h1>Add a User</h1>
 
-        <form id="username_form" method="post" action="/inputform/add_username/">
+        <form id="username_form" method="post" action="/inputform/add_username/" enctype="multipart/form-data">
 
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
@@ -20,7 +20,7 @@
                 {{ field }}
             {% endfor %}
 
-            <input type="submit" name="submit" value="Create UserName" />
+            <input type="submit" name="submit" value="Upload" />
         </form>
     </body>
 
